@@ -1,0 +1,149 @@
+<!--From Dave Gray Youtube tutorial on html (not part of love babbar course)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My webpage</title>
+    <meta name="author" content="Eashan Roy">
+    <meta name="description" content="This is where I'll apply all my learnings in html">
+    <!--Linking css stylesheets and favicons-->
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="image/tofu.jpg">
+</head>
+<body>
+    <header> <!--semantic tag-->
+
+    <h1>Hello World!</h1>
+
+    <!--nav tag to include a list of navigation links to different sevction of a webpage or other webpages-->
+    <nav aria-label="primary navigation"> 
+        <!--aria-label is used to uniquely identify a nav tag in case you use more than one nav tag-->
+        <ul>
+        <li><a href="#schedule">Daily schedule</a></li>
+        <li><a href="#Contact">Contact</a></li>
+    </ul>
+    </nav>
+    </header>
+    <hr>
+    <main> <!--semantic tag-->
+        <article> <!--semantic tag-->
+            <h3>I'm ready to learn HTML</h3>
+            <p>This is my <strong>first webpage</strong></p>
+            <img src="image/html_logo_300x300.png" alt="HTML logo" width="300px" height="300px" title="Logo"><br>
+            <figure> 
+                <figcaption>
+                    <p>An example of HTML code:</p>
+                </figcaption>
+                <code>&lt;h1&gt;Hello World!&lt;h1&gt;</code>
+            </figure>
+        <h3 id="schedule">Daily schedule</h3>
+        <p>Let me tell you about:</p>
+        <ol>  
+            <li>my daily tasks</li>
+            <li>my daily struggles with focus</li>
+        </ol>
+    <aside> <!--semantic tag-->   
+        <details>
+            <ul>
+                <li>Coding</li>
+                <li>Software development</li>
+                <li>Cloud</li>
+            </ul>
+            <summary>Passion</summary>
+        </details>  
+    </aside>
+    </article>  
+    <hr>
+    <h3>I've joined a course</h3>
+    <p>This is the <abbr title="Development of team"><a href="https://www.thecodehelp.in/">DOT</a></abbr> batch</p>
+    <img src="image/caribbean.jpg" alt="Carribean" width="500px" height="300px" loading="lazy">
+    <h3><em>MERN stack</em></h3>
+    <p>Let me tell you about:</p>
+        <ul>  
+        <li><p>topics I've learnt</p></li>
+        <li>teaching quality of the instructor</li>
+        </ul>
+    </article>
+    <article id="address">
+    <h3>My address is:</h3>
+    <address>26, Kalabagan Lane
+    <br>Kolakata - 700033
+    </address>
+    </article>
+    <h3>Topics I want to study after web dev</h3>
+    <dl> <!--distribution list-->
+        <dt>DSA</dt>
+        <dd>data structure and algorithm</dd>
+        <dt>SD</dt>
+        <dd>System Design</dd>
+    </dl>
+    <hr>
+    <article id="Contact">
+    <h2>Contact me</h2>
+    <p>I would like to get in touch with you!</p>
+    <form action="">
+        <p>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName" placeholder="Dicky" autocomplete="on" required>
+        </p>
+        <p>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" id="lastName" placeholder="Nuggets" autocomplete="on">
+        </p>
+        <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="your secret" required>
+        </p>
+        <p>
+        <label for="phone">Phone:</label>
+        <input type="tel" name="Phone" id="phone" placeholder="9898989898" pattern="[6-9]{1}[0-9]{9}" required>
+        </p>
+        <p>
+        <label for="age">Age:</label>
+        <input type="number" name="Age" id="age" placeholder="22" min="18" max="60" step="2" required>
+        </p>
+        <p>
+            <label for="destination1">Favourite destination:</label>
+            <select name="Destination" id="destination1">
+                <optgroup label="Beach">
+                    <option value="Mandarmoni">Mandarmoni</option>
+                    <option value="Digha">Digha</option>
+                    <option value="Puri">Puri</option>
+                </optgroup>
+                <optgroup label="Mountains">
+                    <option value="North-East" selected>North-East</option>
+                    <option value="Darjeeling">Darjeeling</option>
+                </optgroup>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+        <p>
+            <label for="destination2">Favourite destination:</label>
+            <input type="text" name="Destination" id="destination2" list="destination-list">
+                <datalist id="destination-list">
+                    <option value="Mandarmoni">Mandarmoni</option>
+                    <option value="Digha">Digha</option>
+                    <option value="Puri">Puri</option>
+                    <option value="North-East" selected>North-East</option>
+                    <option value="Darjeeling">Darjeeling</option>
+                
+                <option value="Other">Other</option>
+            </datalist>
+            </input>
+        </p>
+
+
+    </form>
+    </main>
+    <hr>
+    <footer>
+        <p>
+            &lt;&lt;&lt;&lt;&nbsp;&copy;<a href="self2.html">Eashan Roy</a>&nbsp;&gt;&gt;&gt;&gt;
+        </p>
+        <p> 
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+</body>
+</html>

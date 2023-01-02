@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- <style>
+        #color {
+            background-color: lightskyblue;
+        }
+    </style> -->
+</head>
+<body>
+    <h2>Welcome to CodeHelp</h2>
+    <h2><span style="background-color: lightskyblue;">Contact Us Form</span></h2>
+    <form action="https://httpbin.org/get" method="get">
+        <!-- <fieldset>
+        <legend>Love Babbar Homework</legend> -->
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            <br>
+            <label for="contact">Contact Number</label>
+            <input type="tel" name="contact" id="contact" placeholder="Enter Contact Number" pattern="[6-9]{1}[0-9]{9}" required>
+            <br>
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <br>
+            <label for="dob">Date Of Birth</label>
+            <input type="date" name="dob" id="dob" placeholder="dd/mm/yyyy">
+            <br>
+            <span>Rating</span>
+        <!-- to ensure only one radio button can be selected, all the radio buttons must share the same "name" -->
+            <input type="radio" id="1" name="rating" value="1">
+            <label for="1">1</label>
+            <input type="radio" id="2" name="rating" value="2">
+            <label for="2">2</label>
+            <input type="radio" id="3" name="rating" value="3">
+            <label for="3">3</label>
+            <input type="radio" id="4" name="rating" value="4">
+            <label for="4">4</label>
+            <input type="radio" id="5" name="rating" value="5">
+            <label for="5">5</label> 
+            <br>
+            <label for="message">Enter Your Message</label><br>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
+            <br>
+            <button type="submit">Send</button>
+            <button type="reset">Reset</button>
+        <!-- </fieldset> -->
+    </form>
+    <br>
+    <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="youtube image" width="60px"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1025px-Instagram-Icon.png" alt="instagram image" width="60px">
+    <img src="https://cdn-icons-png.flaticon.com/512/355/355977.png" alt="telegram image" width="60px">
+</body>
+</html>
