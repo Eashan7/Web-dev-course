@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="#" id="form">
+      <h2><strong>Student Registration Form</strong></h2>
+      <h4>Name of the applicant:</h4>
+      <p>
+        <label for="firstName">First Name:</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="Enter Your First Name"
+        />
+        <label for="lastName">Last Name:</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Enter Your Last Name"
+        />
+      </p>
+      <p>
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" name="dob" id="dob" placeholder="dd-mm-yyyy">
+      </p>
+      <p>
+        <span>Gender:&nbsp;</span>
+        <label for="Male" class="gender">Male</label>
+        <input type="radio" name="gender" id="Male" value="Male">
+        <label for="Female" class="gender">Female</label>
+        <input type="radio" name="gender" id="Female" value="Female">
+        <label for="Other" class="gender">Other</label>
+        <input type="radio" name="gender" id="Other" value="Other">
+      </p>
+      <p>
+        <label for="email">Email Address:</label>
+        <input type="email" name="email" id="email" placeholder="email@xyz.com">
+      </p>
+      <p>
+        <label for="contact">Contact No::</label>
+        <input type="tel" name="contact" id="contact" placeholder="+91 6969696969">
+      </p>
+      <p>
+        <label for="language">Language Known:</label>
+        <select name="language" id="language">
+            <option value="Hindi">Hindi</option>
+            <option value="English">English</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Bengali">Bengali</option>
+        </select>
+      </p>
+      <h4>Parent's Information:</h4>
+      <p>
+      <label for="fatherName">Father's Name:</label>
+        <input
+          type="text"
+          id="fatherName"
+          name="fatherName"
+          placeholder="Enter Your Father's Name"
+        />
+    </p>
+    <p>
+      <label for="motherName">Mother's Name:</label>
+        <input
+          type="text"
+          id="motherName"
+          name="motherName"
+          placeholder="Enter Your Mother's Name"
+        />
+    </p>
+    <p>
+      <label for="fatherqualification">Father's Qualification:</label>
+        <input
+          type="text"
+          id="fatherqualification"
+          name="fatherqualification"
+          placeholder="Enter Your Father's Qualification"
+        />
+    </p>
+    <p>
+        <label for="fatheremail">Father's Email Address:</label>
+        <input type="email" name="fatheremail" id="fatheremail" placeholder="email@xyz.com"> 
+    </p>
+    <p>
+        <label for="fathercontact">Father's Contact No::</label>
+        <input type="tel" name="fathercontact" id="fathercontact" placeholder="+91 6969696969">
+      </p>
+      <p>
+        <label for="fatheroccupation">Father's Occupation:</label>
+          <input
+            type="text"
+            id="fatheroccupation"
+            name="fatheroccupation"
+            placeholder="Enter Your Father's Occupation"
+          />
+      </p>
+      <h4>Address:</h4>
+      <p>
+        <label for="address">Residential Address:</label><br>
+        <textarea name="address" id="address" cols="30" rows="2" 
+        placeholder="Enter Your Residential Address"></textarea>
+      </p>
+      <p>
+      <button type="submit">OK</button>
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </p>
+    </form>
+  </body>
+</html>

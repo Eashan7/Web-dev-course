@@ -1,0 +1,21 @@
+#form {
+    margin: auto;
+    width: 42%;
+    border: 1px solid black;
+    background-color: rgb(204, 209, 220);
+}
+h2 {
+    color: rgb(2, 2, 46);
+    text-align: center;
+}
+h4 {
+    color: darkgreen;
+    text-align: center;
+}
+p {
+    color: rgb(97, 42, 165);
+    text-align: center;
+}
+.gender {
+    color: black;
+}
