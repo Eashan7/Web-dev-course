@@ -1,0 +1,46 @@
+/* Universal selector - this selects everything
+
+* {
+
+}
+ 
+ */
+
+/* selectors grouped together */
+h1,h3 {                            
+    color: rgb(86, 86, 220);
+}
+
+p {
+    color: purple;
+}
+#second {
+    color: aqua;
+}
+/* nested selectors */
+p span {
+    color: gold;
+}
+/* 
+
+Note: p tag in html has id=second. 
+So #id will have higher precedence, but higher than who?
+Higher than all other selectors declared for p tag 
+But if there is a child element for p tag like in our html file
+we have a span tag inside p, then precedence order is:
+child selector (i.e. selector for span tag which is 'p span') > parent selector (i.e. all selectors for p tag which are p, #second, .gray)
+Thus if you see the output, span element will be in gold, 2nd para will be in aqua, 3rd para in gray, 1st para in purple. 
+
+*/
+body {
+    font-size: 22px;
+    border: 1px solid black;
+    color: green;
+}
+.gray {
+    color: gray;
+}
+
+#second {
+    font-style: italic;
+}

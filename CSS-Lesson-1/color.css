@@ -1,0 +1,21 @@
+body {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+
+    /* Copy these HEX codes from coolors.co */
+    background-color: #FFCBDD;
+    color: #0B5351; 
+
+    /* background-color: papayawhip; */
+    /* color: rgb(0, 0, 0); */
+    
+    
+}
+
+/* a in hsla or rgba is alpha, which lets you specify opacity */
+
+p {
+    /* color: hsla(128, 50%, 35%, 0.826)  */
+    color: #3E000C;
+}
