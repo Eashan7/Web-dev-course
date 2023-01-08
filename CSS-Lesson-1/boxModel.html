@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 200px;
+            border: 5px solid black;
+            text-align: center;
+            margin: 10px;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+        #org {
+            background-color: #000000;
+        }
+        #wht {
+            background-color: rgba(255, 1, 0, 0.5);
+        }
+        #grn {
+            background-color: magenta;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="org">A</div>
+    <div class="box" id="wht">B</div>
+    <div class="box" id="grn">C</div>
+
+    <!--go to chrome dev tools, -> elements -> 
+    select the below p tag -> Styles 
+    -> see the box and hover around margin, 
+    you'll 20px margin on the webpage highlighted -->
+
+    <p style="margin-top:20px;">this is styled</p>
+
+    <!--here when you hover over the css box's margin area, 
+    you'll not see any 20px margin highlight in the webpage,
+    thereby proving that vertical margins donot apply to 
+    inline elements. Only exception is img. -->
+    
+    <p>This is <span style="margin-top: 20px;">styled</span></p>
+</body>
+</html>

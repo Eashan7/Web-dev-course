@@ -1,0 +1,61 @@
+body {
+    background-color: #000;
+}
+.card {
+    background-color: #fff;
+    width: 330px;
+    height: 370px;
+    font-size: 22px;
+    /* text-align: center; */
+    border-radius: 10px;
+}
+img {
+    height: 220px;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 14px;
+    border-radius: 10px;
+
+    /* vertical-margins, height, width 
+    can be set for img though it is inline
+    Cause it is inline replaced element
+    But text-align cannot be applied. */
+}
+.caption {
+    text-align: left;
+    margin-left: 20px;
+    font-weight: bold;
+}
+.discount {
+    color: blue;
+
+    /* Width, height, vertical-margins, text-align 
+    cannot be set for inline elements. Exceptions are 
+    img where vertical-margins, height, width can be applied.
+    Another exception is button, where height, width 
+    can be applied.
+
+    width: 100px;
+    height: 200px; */
+}
+.original {
+    text-decoration:line-through;
+    color: gray;
+}
+button {
+    background-color:rgb(33, 247, 33);
+    border: 1px solid rgb(33, 247, 33);
+    height: 25px;
+    padding: 3px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white;
+
+    /* Width, height can be set for button 
+    though it is inline. But text-align and vertical-margins cannot */
+}
+#hr {
+    background-color:beige;
+    width: 200px;
+    margin-left:2px;
+}
