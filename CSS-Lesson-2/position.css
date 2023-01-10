@@ -13,3 +13,11 @@
     the fixed content will always remain visible
     on the webpage */
 } 
+div.divc {
+    border: 1px solid black;
+    background-color: brown;
+    color: white;
+    position: sticky;
+    top: 0px;
+    left: 20px;
+}

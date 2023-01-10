@@ -1,0 +1,21 @@
+/* transform works in block elements
+Translate: 1st value-horizontal, 2nd value-vertical
+Scale: 1st value-horizontal scaling, 2nd value-vertical scaling */
+
+.box {
+    background-color: aqua;
+    /* transform: translate(100px,100px); 
+    transform: scale(2,3);
+    transform: scaleX(2);
+    transform: scaleY(6);
+
+    transform: skew(-45deg);
+    transform: rotate(-45deg); */
+
+    margin: 200px;
+
+    /* 3-D transform */
+    /* transform: translateX(100px);
+    transform: translateY(100px); */
+    transform: perspective(10px) scaleZ(5px);
+}
