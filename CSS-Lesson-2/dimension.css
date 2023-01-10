@@ -1,0 +1,22 @@
+.box {
+    /* if content size is more than box height, 
+    then overflow  
+    if content size less, max height will not apply*/
+    max-height: 100px;
+
+    border: 1px solid black;
+    overflow: scroll;
+    /* overflow auto means if overflow happening, then scroll
+    will apply, if overflow not happening, 
+    then normal box size */
+}
+.mydiv {
+    border: 1px solid black;
+    margin: 10px;
+
+    /* if content size is more than box height, 
+    then box height will also increase accordingly
+    if content size less than min height, 
+    then box height will remain same */
+    min-height: 100px;  
+}

@@ -1,0 +1,22 @@
+h1 {
+    /* 1st value - horizontal, 2nd value - vertical, 3rd value - blur */
+    text-shadow: 3px 3px 3px red;
+    /* Adding multiple shadows */
+    text-shadow: 3px 3px 3px red, 60px 6px 6px green;
+}
+.box {
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+
+    /*  By default box shadow takes color of text unless explicit color for box shadow not defined */
+    box-shadow: 10px 10px 15px green;
+
+    /* Adding multiple shadows */
+    box-shadow: 10px 10px 15px green, 15px 15px 15px brown;
+
+    /* Negative value used to do opposite the direction of shadow */
+    box-shadow: -10px -10px 15px green, 15px 15px 15px brown;
+    
+    color: red;
+}
