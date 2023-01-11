@@ -1,0 +1,72 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 800px;
+    border: 8px solid green;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+div.container h1{
+    border: 4px solid red;
+    background-color: lightyellow;
+    position: relative;
+
+    /* 
+    position:relative has no effect unless you use the
+    properties top / bottom / left / right
+     */
+
+    /* margin-top: 50px;  */
+
+    bottom: 50px; 
+
+    /* 
+    'bottom' will add space from bottom such that 
+    element moves above but the size of div container
+    it resides in, and the position of other elements below it, 
+    remains the same. 
+    Different from margin-bottom which adds space below element 
+    and moves other elements that are below it, further away, 
+    thereby increasing size of div container it resides in 
+    */
+
+    /* DIFFERENCE BETWEEN margin-top AND top IS THAT:
+
+    margin-top will add space in the top of the box 
+    while also relatively shifting other elements below it, 
+    thus resulting in a "taller box"
+    
+    But, top will add space in top of box, having 
+    the box of same height and also keeping position of 
+    other elements the same. Sometime this could also
+    lead to overlapp of the element you're moving with 
+    other elements */
+
+    /* z-index property is used with 'position' property
+    It is used to specify the stack order of an element.
+
+    Useful for overlapping elements.
+
+    So if two elements are overlapping, then element with 
+    greater z-index appears over the element with smaller z-index
+    
+    By default, z-index value is zero.
+    So in our case, h1 ("Hello There) is overlapping with the 
+    border of div.container. Lets set z-index of h1 as -1
+    And div.container will have zero value since we are not  
+    specifying any value for it. 
+    Thus z-index of div.conatiner > h1
+    So div.conatiner will appear over h1
+    */ 
+    z-index: -1;
+
+}
+div.container h3{
+    background-color: #000;
+    color: #fff;
+}
+div.container p{
+    border: 4px solid purple;
+    background-color: lightgray;
+}
