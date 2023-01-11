@@ -1,13 +1,34 @@
-/* 'element.class' selector and nested selector combined 
-Here all child h2 elements under section is selected */
-
+/* 'element.class' selector and 'descendant' selector combined
+Descendant selector selects all 'h2' elements 
+that are present within 'section'
+*/
 section.my-article h2 {
     color: maroon;
 }
 
-/* Direct child selector i.e. here we are selecting only that h2 
-which is direct child of the section, not all child h2 elements */
-
+/* Child selector i.e. here we are selecting all h2 
+elements that are direct children of the section, 
+not descendants */
 section.my-article > h2 {
-    color: black;
+    color: green;
+}
+
+p {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 1px 1px gray;
+    color: plum;
+}
+
+/* Ajacent sibling selector - selects the h2 that 
+appears immediately after 'section' gets over */
+section + h2 {
+    color: chartreuse;
+}
+
+/* General sibling selector - selects all h2 that
+ appears after 'section' gets over */
+section ~ h2 {
+    color: darkblue;
 }

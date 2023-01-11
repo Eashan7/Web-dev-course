@@ -1,0 +1,58 @@
+/* 
+Attribute selector: used to select elements with a 
+specified attribute 
+*/
+input[type="text"] {
+    color: red;
+    background-color: aliceblue;
+}
+input[type="password"] {
+    background-color: pink;
+}
+
+/* Lets capply styling to the link for 'Google India' 
+So note that a link is an adjacent sibling of h2 */
+h2+a {
+   color: brown; 
+}
+
+/* Another way to select the same a element is to apply 
+attribute selector. Lets see how: */
+a[href="https://google.co.in"]{
+    color: chartreuse;
+}
+/* 
+Note: both h2+a and a[href="..."] have same specificity
+so according to top down approach CSS gives preference
+to selector that is declared last i.e. a[href="....."] 
+*/
+
+/* 
+Modification on attribute selector
+Suppose you want to select all 'a' links 
+which has word google in its attribute 'href' 
+How do you do it? 
+*/
+a[href*="google"]{
+    color: darkgreen;
+}
+
+/* 
+To select all 'a' links that starts with https, we use 
+[href^="https"]
+
+This symbol (^) is called the caret symbol.
+
+Note: Here you can use href*="https" but href^="https"
+is specially designed to select attributes that starts 
+with and not merely contains the specified value
+*/
+a[href^="https"]{
+    color: goldenrod;
+}
+
+/* To select all 'a' links that ends with com, we use 
+[href$="https"] */
+a[href$="com"]{
+    color: olive;
+}
