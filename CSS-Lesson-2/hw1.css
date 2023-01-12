@@ -1,0 +1,52 @@
+/* Note: position:absol;ute is not inherited. Hence specified
+that property for each 'span' tag instead of placing inside 
+parent element 'body' */
+body{
+    color: whitesmoke;
+} 
+.box{
+    position: relative;
+}
+img{
+    height: 25%;
+    width: 18%;
+}
+#top-left{
+    position: absolute;
+    left: 1px;
+}
+#bottom-left{
+    position: absolute;
+    left: 1px;
+    top: 292px;
+}
+#top-right{
+    position: absolute;
+    left: 190px;
+}
+#bottom-right{
+    position: absolute;
+    left: 190px;
+    top: 292px;
+}
+#center{
+    position: absolute;
+    
+    top: 50%; 
+    /*note: here % means respect to parent div. 
+    Parent div takes height as much as content (image) 
+    so here 50% of div = 50% of image*/
+    
+    left: 9%; 
+    /*Reason of taking 9% -> 
+    parent element div's width is 100% of webpage, 
+    and image takes 18% of that div width/webpage. 
+    So if we want to place the text in the center of image, 
+    then we need to give 'left' value equal to half of 
+    image percent i.e. 18/2 = 9%. 
+    This 9% is 9% of div width */
+
+    transform: translate(-50%,-50%); 
+}
+
+

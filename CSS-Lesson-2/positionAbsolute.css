@@ -42,13 +42,15 @@ div.container h1{
     */
 
     /* 
-    This is how we center an element. Make its parent position relative,
-    make the element's own position absolute. That is now the 
-    element will move with respect to its parent
-    Now give a height and width to element,
-    make top, bottom, right, left all equal to zero,
-    then set margin:auto
+    This is how we center an element horizontally and vertically.
+    Make its parent position relative,make the element's 
+    own position absolute. That is, now the element will move 
+    with respect to its parent. Now give a height and width 
+    to the element, make its top, bottom, right, left 
+    all equal to zero, then set margin:auto
     Element will be centered. 
+
+    This is called "absolute + margin:auto" method
     */
     position: absolute;
     top: 0;
@@ -56,7 +58,23 @@ div.container h1{
     bottom: 0;
     right: 0;
     margin: auto;
-    /* transform: translate(-50%,-50%); */
+    
+    /*
+
+    There's a second method to center elements which is called 
+    "absolute + transform"
+
+    The code is: 
+    make parent relative
+    make child absolute, 
+
+    then execute for child:
+
+    top:50%; 
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    */
 }
 div.container h3{
     background-color: #000;
