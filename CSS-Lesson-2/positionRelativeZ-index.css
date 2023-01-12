@@ -15,6 +15,10 @@ div.container h1{
     /* 
     position:relative has no effect unless you use the
     properties top / bottom / left / right
+    On using top, bottom, right, left, it moves with 
+    respect to its original position. This is different 
+    from 'position:absolute' where element moves with
+    respect to the whole page
      */
 
     /* margin-top: 50px;  */
@@ -23,12 +27,14 @@ div.container h1{
 
     /* 
     'bottom' will add space from bottom such that 
-    element moves above but the size of div container
-    it resides in, and the position of other elements below it, 
+    element moves above from its normal position 
+    but the size of div container it resides in, 
+    and the position of other elements below it, 
     remains the same. 
-    Different from margin-bottom which adds space below element 
-    and moves other elements that are below it, further away, 
-    thereby increasing size of div container it resides in 
+    Different from 'margin-bottom' which adds space 
+    below element and moves other elements that are below it, 
+    further away, thereby increasing size of div container 
+    it resides in 
     */
 
     /* DIFFERENCE BETWEEN margin-top AND top IS THAT:
