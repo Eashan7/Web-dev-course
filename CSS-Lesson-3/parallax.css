@@ -1,0 +1,79 @@
+/* 
+1st MISTAKE: Did not specify height of parent div (container), so the moment child div was made absolute, 
+child div went out of flow of html document and parent div had no content inside it, so its height became zero, 
+therefore nothing visible on screen.
+Solution: Always assign an absolute value to parent conatiner's height like 100vh. Only then you'll be able to see 
+absolutely positioned child elements.
+   
+2nd MISTAKE: Applied 'position:absolute' on div .box hoping it would get inherited to child items (like background image,
+foreground image, h1 text), but always remember 'position:absolute' is NOT INHERITED
+SOLUTION: Apply 'position:relative' to immediate parent (i.e. .box) and 'position:absolute' to children (i.e. images, h1) 
+
+3rd MISTAKE and SOLUTION: Don't apply 'display:flex' to ancestor like .container, apply it to immediate parent like .box. 
+And 'justify-content' and 'align-items' are applied on parent, not child. 
+
+4th MISTAKE: For overlap to happen, you need to set 'position:abolute' and 'position:relative' correctly according to point 
+mentioned in '2nd MISTAKE'.. Now once overlap happens, you might not be able to see some item on screen (like the h1 text). 
+That means the h1 element might have been covered due to overlap.
+SOLUTION: Adjust z-index to make the hidden element appear. So one way is to set both images as 'z-index=-1'. That way, 
+h1 having default 'z-index=0' will end up having higher z-index, hence will appear above.
+
+NOTE: For z-index to have effect you don't need to turn on perspective. BUT, for 3-d effect, you definitely need to turn it on. 
+Perspective() function defines the virtual distance between the plane of your computer screen and the HTML element you're 
+applying translateZ to (in our case it will be the images). This means perspective(200px) and translate(75px) creates a virtual
+space of 200px between HTML element and the computer screen, and then moves it 75px closer to you. Likewise, using a negative 
+value in translateZ() moves it further away. 
+Remember, perspective needs to applied to the direct parent element or ancestor. If its applied on ancestor (i.e. .container 
+which is not direct parent), then the 3D effect on child elements will get flattened (i.e. no effect). To preserve the 3D effect, 
+you need to apply 'transform-style: preserve-3D' on the direct parent (i.e. .box)
+
+5th MISTAKE: Even after turning on perspective on ancestor (.container) and transforming background and foreground child images on the z-axis 
+by pushing it away 40px and 20px respectively on the z-plane, we still do not see 3D effect. That is, text which is closest should 
+scroll fastest, then image which is further away (foreground image) should scroll little slow, and then background image which is
+farthest should scroll slowest.  
+SOLUTION: The 3D effect for child elements get flattened cause perspective is applied not on direct parent (i.e. .box), but on ancestor
+(i.e. .conatiner). So to preserve 3D effect, we need to apply 'transform-style: preserve-3D' on the direct parent (.box)
+
+NOTE: On pushing element further away on the z-axis by using 'transform: translateZ(-40px)' will cause it to shrink in size. So to increase 
+size, use scale() function. Eg: transform: translateZ(-40px) scale(5);
+
+6th MISTAKE: Two vertical scroll bars were appearing at the right hand side of the webpage. And a horizontal scrollbar below.
+SOLUTION: To remove the horizontal scroll bar below, use 'overflow-x: hidden' in ancestor/parent element.
+To remove one vertical scroll bar on the right side, use univeral selector and inside it, set 'margin:0' */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    perspective: 10px;
+}
+.box{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.background, .foreground{
+    position: absolute;
+    z-index: -1;
+}
+.background{
+    transform: translateZ(-40px) scale(5);
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+h1{
+    font-size: 60px;
+    font-weight: bolder;
+    position: absolute;
+    top: 130px; 
+    color:rgb(230, 243, 254)
+}
