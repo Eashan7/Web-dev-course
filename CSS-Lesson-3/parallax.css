@@ -39,41 +39,102 @@ size, use scale() function. Eg: transform: translateZ(-40px) scale(5);
 
 6th MISTAKE: Two vertical scroll bars were appearing at the right hand side of the webpage. And a horizontal scrollbar below.
 SOLUTION: To remove the horizontal scroll bar below, use 'overflow-x: hidden' in ancestor/parent element.
-To remove one vertical scroll bar on the right side, use univeral selector and inside it, set 'margin:0' */
+To remove one vertical scroll bar on the right side, use univeral selector and inside it, set 'margin:0'
+
+7th MISTAKE: My images (background, foreground) were moving slow on scrolling. To increase their speeds bring them closer towards 
+the z-axis created by 'perspective'. Reason: The farther the image on the z-axis, the slower it moves on scrolling. 
+SOLUTION: So transformZ value for background and foreground image  was changed from 'transform: translateZ(-40px)' and 
+'transform: translateZ(-20px)' to 'transform: translateZ(-20px)' and 'transform: translateZ(-10px)' respectively.
+Now if you also want to increase the difference in speed between the background image and foreground image, increase the difference between 
+their 'translateZ' value.
+
+8th MISTAKE: Wanted to zoom-in and zoom-out my images. 
+SOLUTION: Adjust the value of 'transform: scale()' for that. Increase the value of you want to zoom out, decrease the value if 
+you want to zoom in. */
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.container{
+.wrapper{
     overflow-x: hidden;
     overflow-y: auto;
     height: 100vh;
     perspective: 10px;
 }
-.box{
+.container{
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     height: 100%;
     transform-style: preserve-3d;
+    z-index: -1;
 }
 .background, .foreground{
     position: absolute;
     z-index: -1;
+    /* height: 100%;
+    width:100%; */
+    object-fit: cover;
 }
 .background{
-    transform: translateZ(-40px) scale(5);
+    transform: translateZ(-20px) scale(2.63);
 }
 .foreground{
-    transform: translateZ(-20px) scale(3);
+    transform: translateZ(-10px) scale(1.32);
 }
 h1{
-    font-size: 60px;
+    font-size: 148px;
     font-weight: bolder;
     position: absolute;
-    top: 130px; 
-    color:rgb(230, 243, 254)
+    top: 6.8rem; 
+    /* letter-spacing: 2px; */
+    color:white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+section{
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 5rem 0;
+}
+.secHeading{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+    font-family: sans-serif;
+}
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+}
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    color: black;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 3.5rem;
+    font-family: sans-serif;
+}
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+.bg3{
+    background-image: url(sport-3.jpg);
 }
