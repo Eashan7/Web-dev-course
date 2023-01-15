@@ -24,8 +24,12 @@
     display: flex;
     height: 60%;
     width: 50%;
+
     /* justify-content: center;
     align-items: center; */
+
+    /*Here j-c and a-i not needed cause children of .container occupy its full space, so no need of centering them.*/
+
     border-radius: 13px;
     box-shadow: -3px -3px 7px rgba(0,0,0,0.1);
     /* 1st value in box shadow is horizontal shadow which is towards right if positive value given, and towards left if negative value given
@@ -36,7 +40,8 @@
     height: 100%;
     width: 45%;
     border-radius: 13px 0px 0px 13px;
-    /* box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.3); */
+    /* 1st value denotes top-left radius, 2nd value denotes top-right radius, 3rd value denotes bottom-right radius,
+    and 4th value denotes bottom-left radius */
 }
 .card{
     height: 100%;
