@@ -50,7 +50,24 @@ their 'translateZ' value.
 
 8th MISTAKE: Wanted to zoom-in and zoom-out my images. 
 SOLUTION: Adjust the value of 'transform: scale()' for that. Increase the value of you want to zoom out, decrease the value if 
-you want to zoom in. */
+you want to zoom in. 
+
+9th MISTAKE: In all .desc elements which are the h2 tags (for surfing, biking, para gliding), I tried to center them horizontally and vertically 
+using 
+.bg { postion: relative }
+.desc {
+    position: absolute;
+    top:0 ; bottom:0 ; right:0 ; left:0 ; margin-auto:0 ;
+    background-color: white;
+}
+But this resulted in the h2 elements taking up the entire div element (.bg) hiding the background images.
+Reason: desc is selector for block element h2. Thus it takes up entire width of viewport by default, and height acc. to content.
+But since we use position:absolute, so it will remove h2 from document flow, and thus there is no reference for what width h2
+should be, so now h2 will take as much width as its content. So now if you use 'top:0 ; bottom:0 ; right:0 ; left:0 ; margin-auto:0',
+it will stretch the content to occupy entire parent div size (.bg) and thereby hiding the background image.
+SOLUTION: Specify height & width of .desc explicitly. Even better solution is to use 
+'top:50% ; left:50% ; transform: translateX(-50%) translateY(-50%);' so that you don't have to hardcode height and width
+*/
 
 *{
     box-sizing: border-box;
@@ -103,6 +120,11 @@ section{
 .secHeading{
     font-size: 5rem;
     padding: 0 10rem;
+    /* 'padding: 0 10rem' means top & bottom padding is 0, 
+    right & left padding is 10rem.
+    rem means relative to root i.e. html
+    em for font-size means relative to parent
+    em for other properties mean relative to itself*/
 }
 .text{
     font-size: 1.5rem;
@@ -116,16 +138,16 @@ section{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 500px;
+    height: 600px;
 }
 .desc{
     position: absolute;
     background-color: white;
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 2.5rem;    
     top: 50%;
     left: 50%;
-    color: black;
     transform: translateX(-50%) translateY(-50%);
+    color: black;
     font-size: 3.5rem;
     font-family: sans-serif;
 }
