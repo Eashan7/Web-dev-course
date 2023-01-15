@@ -84,8 +84,12 @@ button{
     padding-bottom: 10px;
     text-align: center;
     background-color: darkgreen;
+    opacity: 0.7;
     color: white;
     font-weight: bold;
     border-radius: 8px;
     border: transparent;
+}
+button:hover{
+    opacity: 1;
 }
