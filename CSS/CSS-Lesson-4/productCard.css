@@ -1,0 +1,87 @@
+/* 
+1.) To make text bolder than what is doable by font-weight, use 'text-shadow: 1.5px 0px 1px rgba(0,0,0,0.3);' 
+
+2.) IMPORTANT OBSERVATION ON FLEX:
+
+    -> When declared on parent, only applies on immediate children, not children of children (i.e. descendants). So when we declared
+       .wrapper as flex .container got arranged in a row. But the elements inside container (i.e. image and div block) did not. Image 
+       appeared in one line, while div 'card' appeared in another. So inorder to arrange .conatiner's child elements (img, .card) 
+       in row order (which is default orientation of flex [flex-direction=row]), we need 'display:flex' in .container as well. 
+*/
+*{
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(245, 225, 225);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    height: 60%;
+    width: 50%;
+    /* justify-content: center;
+    align-items: center; */
+    border-radius: 13px;
+    box-shadow: -3px -3px 7px rgba(0,0,0,0.1);
+    /* 1st value in box shadow is horizontal shadow which is towards right if positive value given, and towards left if negative value given
+    2nd value is vertical shadow which is towards bottom if positive value given, and towards top if negative value given.
+    Increase the blur effect to make it look better, and reduce 'a' value or opacity in 'rgba' property. */
+}
+.container > img{
+    height: 100%;
+    width: 45%;
+    border-radius: 13px 0px 0px 13px;
+    /* box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.3); */
+}
+.card{
+    height: 100%;
+    width: 55%;
+    background-color: white;
+    padding-left: 1.5rem;
+    border-radius: 0px 13px 13px 0px;
+    /* box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.3); */
+}
+.heading{
+    text-shadow: 1.5px 0px 1px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.tag{
+    color: gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+.desc{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    opacity: 0.8;
+    font-size: 1rem;
+}
+#discountedPrice{
+    color:darkgreen;
+    font-weight: bolder;
+    font-size: 2rem;
+    text-shadow: 1px 0px;
+}
+#originalPrice{
+    color: gray;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+button{
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border: transparent;
+}
+
