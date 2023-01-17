@@ -37,8 +37,8 @@ nav.menu ul{
     color: gray;
     text-shadow: 1px 0 0px rgba(0,0,0,0.1);
 }
-nav.menu li:hover{
-    color: rgb(2, 2, 220);
+nav.menu li:hover, footer h5:hover{
+    color: darkblue;
     transform: scale(1.02);
 }
 nav.menu button{
@@ -57,7 +57,7 @@ nav.menu button:hover{
 }
 section.content1, section.content2{
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: space-between; */
     height: 30%;
 }
 .heading{
@@ -72,13 +72,16 @@ section.content1 img, section.content2 img{
     height: 70%;
     width: 40%;
 }
+section.content1 img:hover, section.content2 img:hover{
+    transform: scale(1.1);
+}
 section.content2 img{
     margin-right: 3rem;
 }
 section.content2 + hr{ /*adjacent sibling selector*/
     margin-top: -1rem;
 }
-section hr{
+hr{
     margin: 0.2rem 0 1rem 0rem;
     width: 35%;
 }
@@ -119,7 +122,11 @@ footer button{
     border-radius: 50%; /* To create round button, use 'border-radius: 50%' */
     background-color: blue;
     border: none;
-    width: 15%;
+    width: 20%;
+}
+footer button:hover{
+    transform: scale(1.1);
+    background-color: darkblue;
 }
 .menu2 ul{
     list-style-type: none;
