@@ -72,7 +72,7 @@ section.content1 img, section.content2 img{
     height: 70%;
     width: 40%;
 }
-section.content1 img:hover, section.content2 img:hover{
+section.content1 img:hover, section.content2 img:hover, article h1:hover{
     transform: scale(1.1);
 }
 section.content2 img{
@@ -125,7 +125,7 @@ footer button{
     width: 20%;
 }
 footer button:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
     background-color: darkblue;
 }
 .menu2 ul{
