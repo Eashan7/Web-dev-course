@@ -1,0 +1,37 @@
+.container{
+    height: 500px;
+    width: 500px;
+    background-color: green;
+    border: 3px solid red;
+}
+.box{
+    background-color: aqua;
+    border: 2px solid orange;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+
+    /* transition: 2s; */
+
+    /* transition-property: all;  */
+    /* bad practice, impacts performance of website, apply to specific property like say background-color */
+
+    /* transition-property: background-color; */
+    /* transition-delay: 2s; */
+
+    /* Shorthand
+    transition: 1st value = property(like bg-color), 2nd value = duration of effect on property (like 2s),
+    3rd value = transition timing function (like ease,linear), 4th value = delay after which effect starts */
+    /* transition: transform 2s ease 1s; */
+    transition: all 2s ease 1s;
+    /* transition: transform 5s ease-out 1s; */
+    /* transition: all 3s cubic-bezier(0,1.47,0,1.68) 2s; */
+}
+.box:hover{
+    /* background-color: brown;   */
+    /* transform: rotate(45deg); */
+    background-color: brown;
+}
+#box2:hover{
+    transform: translateX(500px) rotate(360deg) scale(2);
+}

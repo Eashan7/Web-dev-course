@@ -1,3 +1,10 @@
+/* 
+For responsive websites, always use :
+1.) max-width instaed of width. Reason: If you set max-width, then when webpage viewd in smaller screens and width decreases, the width changes (decreases) according to content.
+ 2.) min-height instead of height. Reason: If you set min-height, then when webpage is viewd on smaller screens where width gets less and height increases, the height changes (increases) according to content
+ 3.)Use flex-wrap wherever possible. 
+ */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -8,48 +15,56 @@
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: lightgray;
 }
 .container{
-    width: 50%;
-    height: 100%;
+    max-width: 50%;
+    min-height: 100%;
     background-color: whitesmoke;
-    padding: 1rem 2rem 1rem 3rem;
+    padding: 1.5rem 2rem 1rem 3rem;
     font-family: sans-serif;
 }
 .menu, footer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%;
-    height: 15%;
+    max-width: 100%;
+    min-height: 15%;
     font-size: 0.6rem;
+    padding-bottom: 3rem;
 } 
+footer{
+    padding-bottom: 0.5rem;
+}
 nav.menu img{
-    height:35%;
-    width: 7%;
+    min-height:35%;
+    max-width: 7%;
 }
 nav.menu ul{
     display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
     gap: 1rem;
     color: gray;
     text-shadow: 1px 0 0px rgba(0,0,0,0.1);
+    padding-top: 0.5rem;
 }
 nav.menu li:hover, footer h5:hover{
     color: darkblue;
     transform: scale(1.02);
 }
 nav.menu button{
-    height: 35%;
-    width: 19%;
+    min-height: 35%;
+    max-width: 19%;
     padding: 0.5rem;
     background-color: rgb(4, 4, 222);
     color: white;
     border: none;
-    border-radius: 2px;
-    box-shadow: 1px 0 0 rgba(0,0,0,0.1);
+    border-radius: 5px;
+    /* box-shadow: 1px 0 0 rgba(0,0,0,0.1); */
 }
 nav.menu button:hover{
     background-color: darkblue;
@@ -58,19 +73,24 @@ nav.menu button:hover{
 section.content1, section.content2{
     display: flex;
     /* justify-content: space-between; */
-    height: 30%;
+    min-height: 30%;
+    padding-bottom: 1rem;
 }
 .heading{
     font-size: 1.2rem;
 }
 .desc{
     font-size: 0.6rem;
-    width: 90%;
+    max-width: 90%;
     color: gray;
 }
-section.content1 img, section.content2 img{
-    height: 70%;
-    width: 40%;
+section.content1 img{
+    min-height: 70%;
+    max-width: 40%;
+}
+section.content2 img{
+    /* min-height: 10%; */
+    max-width: 30%;
 }
 section.content1 img:hover, section.content2 img:hover, article h1:hover{
     transform: scale(1.1);
@@ -79,14 +99,15 @@ section.content2 img{
     margin-right: 3rem;
 }
 section.content2 + hr{ /*adjacent sibling selector*/
-    margin-top: -1rem;
+    margin-top: 1rem;
+    max-width: 100%;
 }
-hr{
+section hr{
     margin: 0.2rem 0 1rem 0rem;
-    width: 35%;
+    max-width: 35%;
 }
 footer{
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 footer h5{
     color: rgb(3, 3, 193);
@@ -94,13 +115,15 @@ footer h5{
     padding: 0.5rem 0;
 }
 .privacy,.addressEmail,.menu2{
-    height: 100%;
+    min-height: 100%;
+    max-width: 20%;
 }
 .images{
     display: flex;
+    flex-wrap: wrap;
     gap: 0.2rem;
-    height: 100%;
-    width: 15%;
+    min-height: 100%;
+    /* max-width: 15%; */
 
     /* Notice: Here '.images' is a div container inside footer, and we have set footer as 'justify-content:space-between' i.e. spaces 
     between all flex items (i.e. '.images', '.menu2', '.addressEmail', '.privacy') will be equal. But it might so happen that the space 
@@ -109,20 +132,21 @@ footer h5{
     are still equally spaced, but now that spacing is lesser. */
 }
 #logo2{
-    height: 52%;
-    width: 42%;
+    min-height: 52%;
+    max-width: 42%;
     padding: 0.5rem 0;
 } 
 .img{
-    height: 50%;
-    width: 50%;
+    min-height: 50%;
+    max-width: 50%;
 }
 footer button{
     height: 20%;
+    padding: 1%;
     border-radius: 50%; /* To create round button, use 'border-radius: 50%' */
     background-color: blue;
     border: none;
-    width: 20%;
+    max-width: 20%;
 }
 footer button:hover{
     transform: scale(1.2);

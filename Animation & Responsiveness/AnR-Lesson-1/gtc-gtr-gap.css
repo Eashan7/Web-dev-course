@@ -1,0 +1,60 @@
+/* Note: 'grid-template-*' is for explicit declaration of grid size, while 'grid-auto-*' is for implicit size of grid (i.e. rows/columns which are implicitly added by browser) */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+.container{
+    max-width: 1200px;
+    border: 2px solid red;
+    margin: 100px auto;
+    display: grid;  
+    /* .container becomes grid container and all its children are called grid items */
+
+    /* 'grid-template-columns' specifies size of the columns.
+    grid-template-columns: 100px 200px 100px; */
+
+    /* Defining col size in % might make columns overflow the parent grid container (i.e .container) if gap is suffieciently large. To avoid this, we use 'fr'
+    
+    grid-template-columns: 33% 33% 33%; Note: Here % means relative to inline size of grid container.
+    column-gap: 50px; */
+
+    /* With CSS Grid layout, we get a new flexible unit: the 'fr' unit. Fr is a fractional unit and 1fr means for 1 part of the available space.
+    
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 50px; 
+    Notice however big you give column gap, there will be no overflow, cause fr adjusts according to available space 
+    row-gap: 10px; 
+    Defines gap between rows */
+
+    /* To define row-gap and column-gap together, use 'gap: 10px 50px;' */
+
+    grid-template-columns: repeat(3,1fr);
+    /* same as writing 'grid-template-columns: 1fr 1fr 1fr'. 1st value of repeat() defines no. of times fr will repeat, 2nd value is the value of fr */
+    gap: 10px;
+
+    grid-template-rows: 100px 100px; /*this will give 100px size to first two rows. Size of other rows will be calculated implicitly by browser which will be of some different value 
+    In order to control size of rows whose size has not been explicitly set, we use 'grid-auto-rows' */
+    grid-auto-rows: 100px; 
+    /* Now remaining rows other than first two rows are also 100px */
+
+    /* Note: When there are more items and than the no. of rows and columns you define, then extra content is always added in extra rows
+    Just like in above example, we had 12 grid items (.item) but we had defined 3 cols and 2 rows. So if you see output, cols are still 3, but rows became 4.
+    This is because by default, we have 'grid-auto-flow: row'. This can be changed to
+    'grid-auto-flow:column' where extra cols are added if extra elements there (i.e. now rows will be 2 and cols will be 6) */
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr; /* to set size of columns not set */
+
+    /* Note: If you shrink size of browser, you'll see size of grid adjusting with screen size. This is because we declared row/column size in fr. Had we done it in fixed pixel size, it would not adjust acc. to screen size */
+
+
+}
+.item{
+    background-color: #487eb0;
+    color: #fff;
+    padding: 10px;
+    border: 2px solid black;
+}

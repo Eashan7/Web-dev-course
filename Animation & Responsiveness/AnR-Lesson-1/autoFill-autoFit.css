@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+.container{
+    max-width: 1440px;
+    border: 2px solid red;
+    margin: 100px auto;
+    display: grid;  
+    grid-auto-rows: 100px;
+    /* grid-auto-columns: 150px; */
+    gap: 10px;
+    /* variable columns (auto-fill, auto-fit) 
+    grid-template-columns: repeat(auto-fill,150px); 
+  
+    Auto-fill works with grid-template-columns. It fills the rows with as many columns as it can fit. So it might create empty columns. It is an important
+    property in CSS grid that makes a responsive layout without writing a media query for each grid
+    BUT, note that automatic-repetition of columns (auto-fill) cannot be combined with intrinsic or flexible sizes like 'fr'.
+    The size has to be fixed (like px), or with minmax() where atleast one of the two arguments must be a fixed length.
+
+    ONLY DIFFERENCE BETWEEN AUTO-FILL & AUTO-FIT:
+    'Auto-fill' may create implicit empty columns because it tries to fit as many columns into a row.
+    On the other hand, 'Auto-fit' will not create extra empty columns. */
+
+    /* minmax() - Specify a minimum and maximum value. If used with autofit/autofill, need to specify atleast one value as fixed. */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* similar to flex-wrap */
+    /* grid-template-columns: 2fr 1fr 1fr; */
+}
+.item{
+    border: 1px solid black;
+    background-color: #487eb0;
+    padding: 10px;
+}
+.item1{
+    /* 
+    grid-column-start: 1;
+    grid-column-end: 3; */
+
+    /* Short-hand for both: */
+    /* grid-column: 1/3; */
+
+    /* Another way: */
+    /* grid-column: 1/span 2; */
+
+    /* 
+    grid-row-start: 1;
+    grid-row-end: 3; */
+
+    /* Short-hand for both: */
+    /* grid-row: 1/3; */
+
+    /* Another way: */
+    grid-row: 1/span 2;
+
+    /* You could also mention row span without line number */
+    grid-column: span 2;
+}
+.item4{
+    grid-row: span 2;;
+}
+.item10{
+    /* you can also make a row/column extend till the end by giving end value as -1 */
+    grid-column: 1/-1;
+}
+.container{
+    /* grid-auto-flow: dense; */
+    /* This places items to fill any holes in the grid.
+    Uncomment the above command to see the difference */
+}
