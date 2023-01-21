@@ -1,0 +1,43 @@
+/* 
+1.) For button, max-width does not work without declaring width. So keep width:100%, then use 'max-width' 
+2.) For top/down mentioned in % (like top:50%) to work with position:relative, you need to declare 'height' (not 'min-height') 
+in absolute value (not %) for that element's parent. So, if you want parent element to have 'min-height', then use 'position:absolute'
+3.) For box-shadow, property 'inset' casts an internal shadow. So to create this transition effect, we create button of a certain width, 
+then inside box-shadow property, we use horizontal shadow as the same value as width of button, so that the inset shadow casts the 
+entire button. 
+*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.container{
+    min-height: 100vh;
+    border: 3px solid red;
+}
+button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 150px;
+    width: 100%;
+    padding: 1.3em;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    transition: box-shadow 1s ease-out;
+}
+button:hover{
+    box-shadow: inset 150px 0 0 black;  
+    cursor: pointer; 
+}

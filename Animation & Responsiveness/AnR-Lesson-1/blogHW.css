@@ -2,8 +2,10 @@
 1.) Note: If you have % heights for child elements direct parent shall have an explicit height mentioned. If direct parent also has height in %, then that parent's parent need to have an explicit height like 100vh or something.
 BUT, the top most parent (in our case we have made that as .wrapper) from where height is coming, should have 'height' property defined, NOT 'min-height' property. Else, the % height will not work for child elements, and it will have height:auto
 
-2.) As good practice, apart from giving height to .wrapper, .container, and img, try not to give height to other block elements. They shall dynamically take up content height */
+2.) As good practice, apart from giving height to .wrapper, .container, and img, try not to give height to other block elements. They shall dynamically take up content height 
 
+3.) Declaring row-gap/column-gap for grid in % might cause overflow vertically, but same gap when declared in rem
+will not. */
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +13,7 @@ BUT, the top most parent (in our case we have made that as .wrapper) from where 
 }
 .wrapper{
     height: 100vh; /* DONOT DECLARE THIS AS 'MIN-HEIGHT', ELSE '%' VALUE FOR HEIGHTS/MIN-HEIGHTS FOR CHILD ELEMENTS WILL NOT WORK AND THEY WILL HAVE HEIGHT:AUTO */
-    max-width: 100vw;
+    /* max-width: 100vw; */
     overflow-x: hidden;
     overflow-y: auto; 
     background-color: lightgray;
@@ -42,16 +44,17 @@ img{
 }
 main{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    /* grid-template-rows: repeat(auto-fit,minmax(200px,1fr)); */
-    row-gap: 4%;
-    column-gap: 2%;
-} 
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); 
+    row-gap: 1rem;
+    column-gap: 2rem;
+    /* overflow-y: auto; */
+
+}  
 .ex1,.ex2,.ex3,.ex4,.ex5,.ex6{
     border:1px solid lightcyan;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
     padding: 5%; 
-    display: grid;
+    /* display: grid; */
 }
 .ex1 p.desc,.ex3 p.desc,.ex5 p.desc{
     padding-bottom: 7%;
