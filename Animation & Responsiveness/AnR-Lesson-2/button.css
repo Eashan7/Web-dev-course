@@ -31,11 +31,12 @@ button{
     padding: 1.3em;
     background-color: red;
     border: none;
+    /* box-shadow: 2px 2px 10px rgba(0,0,0,1); */
     border-radius: 5px;
     color: white;
     font-weight: bold;
     letter-spacing: 0.1rem;
-    transition: box-shadow 1s ease-out;
+    transition: box-shadow 1s;
 }
 button:hover{
     box-shadow: inset 150px 0 0 black;  
