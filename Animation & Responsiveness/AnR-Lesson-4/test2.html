@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document2</title>
+    <style>
+        body{
+            min-height: 100vh;
+        }
+        .image{
+            /* position: fixed; */
+            background-image: url(images/chair1.png);
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        
+    To demonstrate that background-image does not need position:fixed
+    to be visible on screen. The only thing it requires is a well-defined height and width.
+    If height is declared in %, parent should have explicit height defined
+    like height:100vh, not 'min-height'. Cause children cannot derive from parent's
+    height if its min-height. (to test this, change height of body to 'height:100vh'
+    You'll see the background image appear.) If however you want to keep min-height of parent
+    and use % height in child, then for that use 'position fixed'.
+
+    This div(.image) if position:fixed is not there, will occupy its normal position 
+    which will not overlap with other elements. So if you want the div (.image - that 
+    contains the background image) to overlap with all other elements and span 
+    the entire webpage, as a background image rightly should, then you need to 
+    set its position:fixed. Position:absolute will also make the background-image
+    overlap, but then there'll be two limitations : 
+
+    1.) If that div (.image) has a relatively positioned parent, it will
+    take position according to the parent and not according to document flow
+    which might not fill the entire webpage.
+
+    2.) Will not be fixed with scrolling. To achieve this, we need to position it relative
+    to viewport and this is only possible with position:fixed. 
+    
+    *NOTE*: viewport and document body are two different things.
+    Viewport is the screen size
+    Document body is the webpage -->
+
+    <div class="image"></div>
+    
+</body>
+</html>

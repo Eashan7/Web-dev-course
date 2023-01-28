@@ -2,7 +2,7 @@
 1st MISTAKE: Did not specify height of parent div (container), so the moment child div was made absolute, 
 child div went out of flow of html document and parent div had no content inside it, so its height became zero, 
 therefore nothing visible on screen.
-Solution: Always assign an absolute value to parent conatiner's height like 100vh. Only then you'll be able to see 
+Solution: Always assign an absolute value to parent container's height like 100vh. Only then you'll be able to see 
 absolutely positioned child elements.
    
 2nd MISTAKE: Applied 'position:absolute' on div .box hoping it would get inherited to child items (like background image,
@@ -133,6 +133,11 @@ section{
     font-family: sans-serif;
 }
 .bg{
+    /* To use backgound-image, explicit height and width needs to be mentioned.
+    If height for the child element is mentioned in %, parent needs to have explicit
+    'height' not 'min-height', mentioned. Reason: children cannot derive from parent's 
+    min-height. But if you want to still have min-height for parent, use position:fixed
+    for child, that way it will be able to derive min-height of parent. */
     position: relative;
     width: 100%;
     background-attachment: fixed;

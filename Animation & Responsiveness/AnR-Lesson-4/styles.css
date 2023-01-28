@@ -1,0 +1,538 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #fff;
+  background-color: #1f2029;
+  min-height: 100vh; 
+  /* Here body is given min-height so that it extends beyond 100vh to accomodate the child elements like 
+  '.section-fluid-main' and '.section' in case they expand beyond 100vh with more content */
+  margin: 0;
+  padding: 0;
+  overflow-x: none;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  margin: 0;
+}
+
+/*similar to .wrapper*/
+/* .section-fluid-main {  
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+} */
+
+/*similar to .container*/
+.section {             
+  position: relative;
+  /* max-width: calc(100% - 40px); */
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px 0;
+}
+
+.section-fluid {   /*contains 'Description' and 'Details' radio button till before 'Choose Color' */
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  visibility: hidden; 
+  /* to hide all the radio button symbols for all radio input types */
+
+  /* z-index: 5; */
+
+  /* On uncommenting 'visibility:hidden', you might expect the radio buttons to be visible again,
+  but it will still not appear. Cause due to position:absolute, they have left the document flow
+  and gotten overlapped with some other element. So after uncommenting visibility:hidden, we also
+  need to apply z-index. */
+}
+
+.color-btn:checked + label,
+.color-btn:not(:checked) + label { 
+  /* to select all checked and unchecked labels of radio buttons and turn them into color boxes as seen 
+  in webpage below 'Choose Color' 
+  Initially it is filled with yellow color, but later in code we change it to the actual colors depending
+  on which input radio button is checked. */
+  position: relative;
+  height: 40px;
+  transition: all 200ms linear;
+  border-radius: 4px;
+  width: 40px;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  color: #ffeba7;
+  margin-right: 10px;
+  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+  z-index: 10;
+  background-position: center;
+  background-size: cover;
+  border: 3px solid transparent;
+} 
+
+.color-btn:checked + label {
+  /* Whenever a radio button label is checked, that button should have a blackish border and scale up in size a
+  little bit. Also both these effects should not happen immediately, but smoothly, hence a transition is 
+  applied with duration 200ms in the previous selector */
+  border-color: #434343;
+  transform: scale(1.1);
+}
+
+/* Now the empty color boxes we created as 'labels' of the radio buttons above, are being filled with the 
+respective color box image. */
+label.first-color {
+  margin-left: 500px;
+  background-image: url("./images/color1.jpg");
+}
+label.color-2 {
+  background-image: url("./images/color2.jpg");
+}
+label.color-3 {
+  background-image: url("./images/color3.jpg");
+}
+label.color-4 {
+  background-image: url("./images/color4.jpg");
+}
+label.color-5 {
+  background-image: url("./images/color5.jpg");
+}
+label.color-6 {
+  background-image: url("./images/color6.jpg");
+}
+
+/* We are creating an empty image box so that we can place the respective chair images here.
+Opacity is zero so that the image box stays empty, unless we specifically set opacity:1 */
+.img-wrap {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 500px;
+  height: 410px;
+  display: inline-block;
+  z-index: 9;
+  transition: all 550ms linear;
+  transition-delay: 100ms;
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity:0;
+}
+
+/* Now adding all the respective chair images in the same common image box that we created above. Whenever 
+a radio button label of particular color is checked, the opacity of the respective chair image will 
+be turned 1 */
+.img-wrap.chair-1 {
+  background-image: url("./images/chair1.png");
+}
+.for-color-1:checked ~ .img-wrap.chair-1 {
+  opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.img-wrap.chair-2 {
+  background-image: url("./images/chair2.png");
+}
+.for-color-2:checked ~ .img-wrap.chair-2 {
+  opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.img-wrap.chair-3 {
+  background-image: url("./images/chair3.png");
+}
+.for-color-3:checked ~ .img-wrap.chair-3 {
+  opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.img-wrap.chair-4 {
+  background-image: url("./images/chair4.png");
+}
+.for-color-4:checked ~ .img-wrap.chair-4 {
+  opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.img-wrap.chair-5 {
+  background-image: url("./images/chair5.png");
+}
+.for-color-5:checked ~ .img-wrap.chair-5 {
+  opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.img-wrap.chair-6 {
+  background-image: url("./images/chair6.png");
+}
+.for-color-6:checked ~ .img-wrap.chair-6 {
+  opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* adding shake animation for the chair images */
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(-1deg);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-3px, 0, 0) rotate(-3deg);
+  }
+  40%,
+  60% {
+    transform: translate3d(3px, 0, 0) rotate(3deg);
+  }
+}
+/* Setting the background image as red linear gradient initially, cause 
+by default, the radio button with red-colored 'label' will remain checked. 
+And that should correspond to this red-colored background image. */
+.back-color {
+  position: fixed;
+
+  /* 
+  Here, there are two purposes for using position:fixed:
+
+  1.) 'To derive from parent's min-height'
+  
+  Here height is given as 100%. So it will look up to its parent
+  'body' for the height. But since parent has min-height, .back-color 
+  won't be able to derive from that height. So basically no height is 
+  being alloted to .back-color. So to derive from min-height, position:fixed 
+  is used. You can test this by removing position:fixed (bg image will disappear, 
+  cause min-height of parent 'body' cannot be derived) and then alloting explicit 
+  height of 100vh to .back-color (bg image will reappear). 
+  Ofcourse the alignment of the bf-image needs to be set post that.
+  
+  2.) 'To remove .back-color (i.e background image) from the document flow
+  so that it can overlap with the rest of the content of the webpage. 
+  */
+
+
+  /* 
+  With fixed, it moves out of document flow and is positioned relative to 
+  viewport (screen) always. It remains fixed irrespective of scrolling.
+
+  With absolute, it moves out of document flow and is positioned with respect 
+  to its nearest relatively positioned parent. If no relatively positioned
+  parent exists, it is positioned with respect to document body (webpage) and 
+  moves with scrolling.
+  
+  With sticky, it toggles between position:relative and position:fixed depending
+  on the scroll position. It is positioned relative until a given offset position 
+  is met in the viewport - then it 'sticks' in place (like position:fixed)
+  */
+
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  background-image: linear-gradient(196deg, #f1a9a9, #e66767);
+  transition: all 250ms linear;
+  transition-delay: 300ms;
+}
+
+/* Now setting background images of other colors too, such that 
+when the respective colored radio-button 'label' is checked, the 
+corresponding background image should be displayed (i.e. the background
+image's opacity will be changed from 0 to 1 on checking the respective 
+radio-button label) */
+.back-color.chair-2 {
+  background-image: linear-gradient(196deg, #4c4c4c, #262626);
+  opacity: 0;
+}
+.for-color-2:checked ~ .back-color.chair-2 {
+  opacity: 1;
+}
+.back-color.chair-3 {
+  background-image: linear-gradient(196deg, #8a9fb2, #5f7991);
+  opacity: 0;
+}
+.for-color-3:checked ~ .back-color.chair-3 {
+  opacity: 1;
+}
+.back-color.chair-4 {
+  background-image: linear-gradient(196deg, #97afc3, #6789a7);
+  opacity: 0;
+}
+.for-color-4:checked ~ .back-color.chair-4 {
+  opacity: 1;
+}
+.back-color.chair-5 {
+  background-image: linear-gradient(196deg, #afa6a0, #8c7f76);
+  opacity: 0;
+}
+.for-color-5:checked ~ .back-color.chair-5 {
+  opacity: 1;
+}
+.back-color.chair-6 {
+  background-image: linear-gradient(196deg, #aaadac, #838786);
+  opacity: 0;
+}
+.for-color-6:checked ~ .back-color.chair-6 {
+  opacity: 1;
+}
+
+.info-wrap {
+  position: relative;
+  margin-left: 500px;
+  z-index: 10;
+  display: block;
+  text-align: left;
+}
+.title-up {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+h4 span {
+  text-decoration: line-through;
+  font-size: 20px;
+  opacity: 0.6;
+  padding-left: 15px;
+}
+h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+/* The labels 'Description' and 'Details' are stylized and their opacity 
+is made 0.5 Now when one label is checked, it's opacity changes from 0.5 
+to 1 And if you hover over the unchecked label, its opacity changes from 
+0.5 to 0.8 */
+.desc-btn:checked + label,
+.desc-btn:not(:checked) + label {
+  position: relative;
+  transition: all 200ms linear;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  color: #ffeba7;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+  margin-right: 25px;
+  opacity: 0.5;
+}
+.desc-btn:checked + label {
+  opacity: 1;
+}
+.desc-btn:not(:checked) + label:hover {
+  opacity: 0.8;
+}
+
+/* Both descriptions present under the labels 'Description' and 'Details'
+are now stylized and opacity is turned to zero, so that later on they can be 
+made visible with their respective radio-button label being checked */
+.desc-sec {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  transition: all 250ms linear;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+.desc-sec.accor-2 {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+#desc-1:checked ~ .desc-sec.accor-1 {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+#desc-2:checked ~ .desc-sec.accor-2 {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.section-inline {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+.section-inline p span {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.btn {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2;
+  height: 48px;
+  border-radius: 4px;
+  width: 210px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 15px 0 rgba(16, 39, 112, 0.15);
+  transition: all 250ms linear;
+  text-decoration: none;
+  margin-top: 50px;
+}
+.icon {
+  padding-right: 7px;
+  font-size: 20px;
+}
+.btn:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: -1;
+  background-color: #944852;
+  transition: background-color 250ms 300ms ease;
+}
+.btn:hover {
+  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+  background-color: #333;
+}
+.for-color-2:checked ~ .info-wrap .btn:before {
+  background-color: #1a1a1a;
+}
+.for-color-3:checked ~ .info-wrap .btn:before {
+  background-color: #40566e;
+}
+.for-color-4:checked ~ .info-wrap .btn:before {
+  background-color: #5e89b2;
+}
+.for-color-5:checked ~ .info-wrap .btn:before {
+  background-color: #8c7f76;
+}
+.for-color-6:checked ~ .info-wrap .btn:before {
+  background-color: #5d6160;
+}
+
+@media screen and (max-width: 991px) {
+  .section {
+    margin: 0 auto;
+    text-align: center;
+    max-width: calc(100% - 40px);
+    width: 370px;
+  }
+  label.first-color {
+    margin-left: 0;
+  }
+  .info-wrap {
+    margin-left: 0;
+    width: 370px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .img-wrap {
+    width: 375px;
+    height: 308px;
+    left: 50%;
+    margin-left: -190px;
+  }
+  .mob-margin {
+    margin-top: 320px;
+  }
+  .desc-btn:checked + label,
+  .desc-btn:not(:checked) + label {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .color-btn:checked + label,
+  .color-btn:not(:checked) + label {
+    height: 40px;
+    width: 40px;
+    margin: 5px auto;
+    text-align: center;
+  }
+  .section-inline {
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .section {
+    width: 280px;
+  }
+  .info-wrap {
+    width: 280px;
+  }
+  .color-btn:checked + label,
+  .color-btn:not(:checked) + label {
+    height: 30px;
+    width: 30px;
+  }
+  .section-inline p span {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .section-inline p {
+    font-size: 14px;
+  }
+}

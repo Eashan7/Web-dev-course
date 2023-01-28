@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        min-height: 100vh;
+      }
+      .chair-2,.chair-3 {
+        position: absolute; 
+        /* If position relative is done, the two divs will not overlap, as then they will be positioned relative to their normal
+        position, which is different for each div. */
+        top: 100px;
+        width: 500px;
+        height: 410px;
+        border: 2px solid black;
+        z-index: 2;
+      } 
+    </style>
+  </head>
+  <body>
+
+    <!-- To demonstrate that a radio button and its label are both clickable 
+     provided radio button's id matches label's 'for' attribute -->
+    <label for="color1">Button</label>
+    <input type="radio" id="color1" />
+  
+    <!-- To demonstrate that if you want to make multiple div's exactly overlap each other,
+    make their position absolute. This way they leave the document flow and get positioned 
+    at the same place. Now give them same width and height to exactly overlap. This can be useful 
+    if you want to create multiple divs (holding different background images) in a common overlapping 
+    space in your website and based on the button that is selected, you want to have that respective 
+    image displayed in that common space. 
+    
+    The logic will be that you create multiple divs and make them 
+    exactly overlap, then add background images in each of those overlapping divs and turn their opacitty 
+    zero. Now if button1 is selected, you turn on the opacity of the image1 to 1 such that image1 is displayed
+    in the common space. Similarly, if button2 is selected, image2 will be displayed in the common space. -->
+    <div class="chair-2"></div>
+    <div class="chair-3"></div>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+1. Install node (https://nodejs.org/en/download/) - 18.13.0
+
+2. Create a folder in Desktop 'Tailwind-CSS' -> Open in VS Code
+
+3. Inside VS Code, click on Terminal -> New Terminal
+
+4. In the terminal:
+   (i)to check if node is installed correctly, execute: node -v
+      (if getting error, add 'C:\Program Files\nodejs' to PATH 
+      environment variable under 'System Variables')
+   (ii)execute: npm install -D tailwindcss postcss autoprefixer vite
+   (iii)execute: npx tailwindcss init -p
+
+5. Install tailwind css intellisense extension
+
+6. Add "*" in content (content is present inside tailwind.configt.js)
+
+7. Add scripts in package.json before "devDependencies"
+   "scripts":{
+     "start":"vite"
+    },
+
+8. Create main.css, insert the following 3 links inside main.css, and link 
+   them with your html file using <link> tag 
+   (NOTE: html file should always be named as index.html):
+       @tailwind base;
+       @tailwind components;
+       @tailwind utilities;
+
+9. On the terminal, execute: npm run start
+   Go to the 'localhost' link shown in Terminal
